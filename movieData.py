@@ -40,10 +40,10 @@ class MovieData:
     imdb_id, imdb_rating, imdb_votes
     """
     def __init__(self, movie_title, fullplot=False,
-                 load_all_data=False):
+                 load_all_data=False): # full plot and load_all_data False by default
         try:
             self.movie_technical_info = omdb.get(title=movie_title, fullplot=fullplot, tomatoes=False)
-        except requests.exceptions.RequestException:  # This is the correct syntax
+        except requests.exceptions.RequestException:
             print("ERROR: Could Not connect to url, please check connection.")
             sys.exit(1)
 
